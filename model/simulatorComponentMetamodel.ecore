@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="simulatorComponentMetamodel" nsURI="http://www.example.org/simulatorComponentMetamodel"
+    nsPrefix="simulatorComponentMetamodel">
+  <eClassifiers xsi:type="ecore:EClass" name="SimulatorComponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requires" upperBound="-1"
+        eType="#//SimulatorComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="provides" upperBound="-1"
+        eType="#//SimulatorComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Simulator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" lowerBound="1"
+        upperBound="-1" eType="#//SimulatorComponent" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>
