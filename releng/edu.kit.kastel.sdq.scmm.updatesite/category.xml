@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-	<feature url="features/mrs.feature_1.0.0.qualifier.jar" id="edu.kit.kastel.sdq.scmm.feature" version="1.0.0.qualifier">
+	<feature url="features/scmm.feature_1.0.0.qualifier.jar" id="edu.kit.kastel.sdq.scmm.feature" version="1.0.0.qualifier">
 	   <category name="edu.kit.kastel.sdq.scmm.feature"/>
 	</feature>
 	<category-def name="edu.kit.kastel.sdq.scmm.feature" label="This category contains all features which belong to a complete installation of the Simulator Component Metamodel">
