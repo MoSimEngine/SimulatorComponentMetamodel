@@ -16,8 +16,25 @@
       [Enter License Description here.]
    </license>
 
-   <requires>
-      <import plugin="edu.kit.kastel.sdq.scmm"/>
-   </requires>
+   <plugin
+         id="edu.kit.kastel.sdq.scmm"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="edu.kit.kastel.sdq.scmm.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="edu.kit.kastel.sdq.scmm.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>
