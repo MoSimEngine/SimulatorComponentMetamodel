@@ -7,7 +7,7 @@
 <plugin>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <!-- @generated edu.kit.kastel.sdq.scmm -->
+      <!-- @generated simulatorComponentMetamodel -->
       <factory
             uri="http://www.example.org/simulatorComponentMetamodel"
             class="simulatorComponentMetamodel.provider.SimulatorComponentMetamodelItemProviderAdapterFactory"

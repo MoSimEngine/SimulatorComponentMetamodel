@@ -7,7 +7,7 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated edu.kit.kastel.sdq.scmm -->
+      <!-- @generated simulatorComponentMetamodel -->
       <package
             uri="http://www.example.org/simulatorComponentMetamodel"
             class="simulatorComponentMetamodel.SimulatorComponentMetamodelPackage"
