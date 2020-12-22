@@ -30,3 +30,5 @@ local.properties
 
 # TeXlipse plugin
 .texlipse
+
+.java-version

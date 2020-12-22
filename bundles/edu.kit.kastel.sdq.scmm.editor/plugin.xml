@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated edu.kit.kastel.sdq.scmm -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="simulatorComponentMetamodel.presentation.SimulatorComponentMetamodelModelWizardID"
+            name="%_UI_SimulatorComponentMetamodelModelWizard_label"
+            class="simulatorComponentMetamodel.presentation.SimulatorComponentMetamodelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SimulatorComponentMetamodelModelFile.gif">
+         <description>%_UI_SimulatorComponentMetamodelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated edu.kit.kastel.sdq.scmm -->
+      <editor
+            id="simulatorComponentMetamodel.presentation.SimulatorComponentMetamodelEditorID"
+            name="%_UI_SimulatorComponentMetamodelEditor_label"
+            icon="icons/full/obj16/SimulatorComponentMetamodelModelFile.gif"
+            extensions="simulatorcomponentmetamodel"
+            class="simulatorComponentMetamodel.presentation.SimulatorComponentMetamodelEditor"
+            contributorClass="simulatorComponentMetamodel.presentation.SimulatorComponentMetamodelActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
