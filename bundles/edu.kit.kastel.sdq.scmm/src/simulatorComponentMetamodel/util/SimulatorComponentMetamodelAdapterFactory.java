@@ -76,6 +76,26 @@ public class SimulatorComponentMetamodelAdapterFactory extends AdapterFactoryImp
 				return createSimulatorComponentAdapter();
 			}
 			@Override
+			public Adapter caseSourceFile(SourceFile object) {
+				return createSourceFileAdapter();
+			}
+			@Override
+			public Adapter caseSourcePackage(SourcePackage object) {
+				return createSourcePackageAdapter();
+			}
+			@Override
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseIdentifiableElement(IdentifiableElement object) {
+				return createIdentifiableElementAdapter();
+			}
+			@Override
+			public Adapter caseSourceProject(SourceProject object) {
+				return createSourceProjectAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -120,6 +140,76 @@ public class SimulatorComponentMetamodelAdapterFactory extends AdapterFactoryImp
 	 * @generated
 	 */
 	public Adapter createSimulatorComponentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link simulatorComponentMetamodel.SourceFile <em>Source File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see simulatorComponentMetamodel.SourceFile
+	 * @generated
+	 */
+	public Adapter createSourceFileAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link simulatorComponentMetamodel.SourcePackage <em>Source Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see simulatorComponentMetamodel.SourcePackage
+	 * @generated
+	 */
+	public Adapter createSourcePackageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link simulatorComponentMetamodel.NamedElement <em>Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see simulatorComponentMetamodel.NamedElement
+	 * @generated
+	 */
+	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link simulatorComponentMetamodel.IdentifiableElement <em>Identifiable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see simulatorComponentMetamodel.IdentifiableElement
+	 * @generated
+	 */
+	public Adapter createIdentifiableElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link simulatorComponentMetamodel.SourceProject <em>Source Project</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see simulatorComponentMetamodel.SourceProject
+	 * @generated
+	 */
+	public Adapter createSourceProjectAdapter() {
 		return null;
 	}
 

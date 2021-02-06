@@ -118,11 +118,81 @@ public class SimulatorComponentMetamodelItemProviderAdapterFactory extends Simul
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link simulatorComponentMetamodel.SourceFile} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SourceFileItemProvider sourceFileItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link simulatorComponentMetamodel.SourceFile}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSourceFileAdapter() {
+		if (sourceFileItemProvider == null) {
+			sourceFileItemProvider = new SourceFileItemProvider(this);
+		}
+
+		return sourceFileItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link simulatorComponentMetamodel.SourcePackage} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SourcePackageItemProvider sourcePackageItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link simulatorComponentMetamodel.SourcePackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSourcePackageAdapter() {
+		if (sourcePackageItemProvider == null) {
+			sourcePackageItemProvider = new SourcePackageItemProvider(this);
+		}
+
+		return sourcePackageItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link simulatorComponentMetamodel.SourceProject} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SourceProjectItemProvider sourceProjectItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link simulatorComponentMetamodel.SourceProject}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSourceProjectAdapter() {
+		if (sourceProjectItemProvider == null) {
+			sourceProjectItemProvider = new SourceProjectItemProvider(this);
+		}
+
+		return sourceProjectItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -133,6 +203,7 @@ public class SimulatorComponentMetamodelItemProviderAdapterFactory extends Simul
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -181,6 +252,7 @@ public class SimulatorComponentMetamodelItemProviderAdapterFactory extends Simul
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -191,6 +263,7 @@ public class SimulatorComponentMetamodelItemProviderAdapterFactory extends Simul
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -201,6 +274,7 @@ public class SimulatorComponentMetamodelItemProviderAdapterFactory extends Simul
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -215,9 +289,13 @@ public class SimulatorComponentMetamodelItemProviderAdapterFactory extends Simul
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
 		if (simulatorItemProvider != null) simulatorItemProvider.dispose();
 		if (simulatorComponentItemProvider != null) simulatorComponentItemProvider.dispose();
+		if (sourceFileItemProvider != null) sourceFileItemProvider.dispose();
+		if (sourcePackageItemProvider != null) sourcePackageItemProvider.dispose();
+		if (sourceProjectItemProvider != null) sourceProjectItemProvider.dispose();
 	}
 
 }

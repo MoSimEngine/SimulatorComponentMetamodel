@@ -48,4 +48,13 @@
 
 	
 	</repositories>
+<dependencies>
+<dependency>
+    <groupId>fr.inria.gforge.spoon</groupId>
+    <artifactId>spoon-core</artifactId>
+    <!-- See rendered release value at http://spoon.gforge.inria.fr/ -->
+    <version>8.2.0</version>
+</dependency>
+</dependencies>
+
 </project>

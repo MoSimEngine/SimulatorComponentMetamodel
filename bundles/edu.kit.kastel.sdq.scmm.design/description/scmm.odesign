@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="scmm" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="scmm" version="12.0.0.2017041100">
   <ownedViewpoints name="simulators" modelFileExtension="simulatorcomponentmetamodel">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Simulator Component Diagramm" domainClass="simulatorComponentMetamodel::Simulator" enablePopupBars="true">
       <metamodel href="http://www.example.org/simulatorComponentMetamodel#/"/>
       <defaultLayer name="Default">
-        <nodeMappings name="SimulatorComponentNode" semanticCandidatesExpression="aql:self.components" domainClass="simulatorComponentMetamodel::SimulatorComponent">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/edu.kit.kastel.sdq.scmm.design/img/simulator_component.png">
-            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-          </style>
-        </nodeMappings>
-        <edgeMappings name="requiredEdge" sourceMapping="//@ownedViewpoints[name='simulators']/@ownedRepresentations[name='Simulator%20Component%20Diagramm']/@defaultLayer/@nodeMappings[name='SimulatorComponentNode']" targetMapping="//@ownedViewpoints[name='simulators']/@ownedRepresentations[name='Simulator%20Component%20Diagramm']/@defaultLayer/@nodeMappings[name='SimulatorComponentNode']" targetFinderExpression="aql:self.requires">
+        <edgeMappings name="requiredEdge" sourceMapping="//@ownedViewpoints[name='simulators']/@ownedRepresentations[name='Simulator%20Component%20Diagramm']/@defaultLayer/@containerMappings[name='SimulatorComponentContainer']" targetMapping="//@ownedViewpoints[name='simulators']/@ownedRepresentations[name='Simulator%20Component%20Diagramm']/@defaultLayer/@containerMappings[name='SimulatorComponentContainer']" targetFinderExpression="aql:self.requires">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -18,6 +12,102 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
+        <edgeMappings name="importEdge" sourceMapping="//@ownedViewpoints[name='simulators']/@ownedRepresentations[name='Simulator%20Component%20Diagramm']/@defaultLayer/@containerMappings[name='SimulatorComponentContainer']/@subContainerMappings[name='SourceProject']/@subContainerMappings[name='SourcePackage']/@subContainerMappings[name='SourceFile']" targetMapping="//@ownedViewpoints[name='simulators']/@ownedRepresentations[name='Simulator%20Component%20Diagramm']/@defaultLayer/@containerMappings[name='SimulatorComponentContainer']/@subContainerMappings[name='SourceProject']/@subContainerMappings[name='SourcePackage']/@subContainerMappings[name='SourceFile']" targetFinderExpression="aql:self.imports">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="SimulatorComponentContainer" domainClass="simulatorComponentMetamodel::SimulatorComponent">
+          <subContainerMappings name="SourceProject" semanticCandidatesExpression="feature:sourceproject" domainClass="simulatorComponentMetamodel::SourceProject">
+            <subContainerMappings name="SourcePackage" semanticCandidatesExpression="feature:sourcepackage" domainClass="simulatorComponentMetamodel::SourcePackage">
+              <subContainerMappings name="SourceFile" semanticCandidatesExpression="feature:sourcefile" domainClass="simulatorComponentMetamodel::SourceFile">
+                <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                  <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                </style>
+              </subContainerMappings>
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subContainerMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Tools">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Load Source Project" containerMappings="//@ownedViewpoints[name='simulators']/@ownedRepresentations[name='Simulator%20Component%20Diagramm']/@defaultLayer/@containerMappings[name='SimulatorComponentContainer']/@subContainerMappings[name='SourceProject']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="Load Project For Simulator Component" id="LoadProjectForSimulatorComponent"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Simulator Component" precondition="aql:container.oclIsTypeOf(simulatorComponentMetamodel::Simulator)" containerMappings="//@ownedViewpoints[name='simulators']/@ownedRepresentations[name='Simulator%20Component%20Diagramm']/@defaultLayer/@containerMappings[name='SimulatorComponentContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="simulatorComponentMetamodel::SimulatorComponent" referenceName="components"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Source Project" containerMappings="//@ownedViewpoints[name='simulators']/@ownedRepresentations[name='Simulator%20Component%20Diagramm']/@defaultLayer/@containerMappings[name='SimulatorComponentContainer']/@subContainerMappings[name='SourceProject']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="simulatorComponentMetamodel::SourceProject" referenceName="sourceproject"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ToolDescription" name="Sync Projects" precondition="aql:self.oclIsTypeOf(simulatorComponentMetamodel::Simulator)">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="Sync Projects For Simulator" id="SyncProjectsForSimulator"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:GroupMenu" name="Simulator Component Operations" precondition="aql:self.oclIsTypeOf(simulatorComponentMetamodel::SimulatorComponent)" locationURI="menu:root">
+            <itemDescriptions xsi:type="tool_1:PopupMenu" name="Simulator Component Operations">
+              <menuItemDescription xsi:type="tool_1:OperationAction" name="Load Source Project">
+                <view name="views"/>
+                <initialOperation>
+                  <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
+                    <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="Load Project For Simulator Component Group Menu" id="LoadProjectForSimulatorComponent"/>
+                  </firstModelOperations>
+                </initialOperation>
+              </menuItemDescription>
+            </itemDescriptions>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:GroupMenu" name="Simulator Operations" precondition="aql:self.oclIsTypeOf(simulatorComponentMetamodel::Simulator)" locationURI="menu:root">
+            <itemDescriptions xsi:type="tool_1:PopupMenu" name="Simulator Operations">
+              <menuItemDescription xsi:type="tool_1:OperationAction" name="Sync Source Projects">
+                <view name="views"/>
+                <initialOperation>
+                  <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
+                    <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="Sync Projects For Simulator" id="SyncProjectsForSimulator"/>
+                  </firstModelOperations>
+                </initialOperation>
+              </menuItemDescription>
+            </itemDescriptions>
+          </ownedTools>
+        </toolSections>
       </defaultLayer>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="edu.kit.kastel.sdq.scmm.design.Services"/>

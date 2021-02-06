@@ -9,10 +9,15 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import simulatorComponentMetamodel.IdentifiableElement;
+import simulatorComponentMetamodel.NamedElement;
 import simulatorComponentMetamodel.Simulator;
 import simulatorComponentMetamodel.SimulatorComponent;
 import simulatorComponentMetamodel.SimulatorComponentMetamodelFactory;
 import simulatorComponentMetamodel.SimulatorComponentMetamodelPackage;
+import simulatorComponentMetamodel.SourceFile;
+import simulatorComponentMetamodel.SourcePackage;
+import simulatorComponentMetamodel.SourceProject;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,6 +39,41 @@ public class SimulatorComponentMetamodelPackageImpl extends EPackageImpl impleme
 	 * @generated
 	 */
 	private EClass simulatorComponentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sourceFileEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sourcePackageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass namedElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass identifiableElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sourceProjectEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -101,6 +141,7 @@ public class SimulatorComponentMetamodelPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSimulator() {
 		return simulatorEClass;
 	}
@@ -110,26 +151,9 @@ public class SimulatorComponentMetamodelPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSimulator_Name() {
-		return (EAttribute)simulatorEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSimulator_Id() {
-		return (EAttribute)simulatorEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@Override
 	public EReference getSimulator_Components() {
-		return (EReference)simulatorEClass.getEStructuralFeatures().get(2);
+		return (EReference)simulatorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -137,6 +161,7 @@ public class SimulatorComponentMetamodelPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSimulatorComponent() {
 		return simulatorComponentEClass;
 	}
@@ -146,25 +171,28 @@ public class SimulatorComponentMetamodelPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSimulatorComponent_Name() {
-		return (EAttribute)simulatorComponentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSimulatorComponent_Id() {
-		return (EAttribute)simulatorComponentEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@Override
 	public EReference getSimulatorComponent_Requires() {
+		return (EReference)simulatorComponentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSimulatorComponent_Provides() {
+		return (EReference)simulatorComponentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSimulatorComponent_Sourceproject() {
 		return (EReference)simulatorComponentEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -173,8 +201,9 @@ public class SimulatorComponentMetamodelPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSimulatorComponent_Provides() {
-		return (EReference)simulatorComponentEClass.getEStructuralFeatures().get(3);
+	@Override
+	public EClass getSourceFile() {
+		return sourceFileEClass;
 	}
 
 	/**
@@ -182,6 +211,97 @@ public class SimulatorComponentMetamodelPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EReference getSourceFile_Imports() {
+		return (EReference)sourceFileEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getSourcePackage() {
+		return sourcePackageEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSourcePackage_Sourcefile() {
+		return (EReference)sourcePackageEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getNamedElement() {
+		return namedElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getNamedElement_Name() {
+		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getIdentifiableElement() {
+		return identifiableElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getIdentifiableElement_Id() {
+		return (EAttribute)identifiableElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getSourceProject() {
+		return sourceProjectEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSourceProject_Sourcepackage() {
+		return (EReference)sourceProjectEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public SimulatorComponentMetamodelFactory getSimulatorComponentMetamodelFactory() {
 		return (SimulatorComponentMetamodelFactory)getEFactoryInstance();
 	}
@@ -206,15 +326,27 @@ public class SimulatorComponentMetamodelPackageImpl extends EPackageImpl impleme
 
 		// Create classes and their features
 		simulatorEClass = createEClass(SIMULATOR);
-		createEAttribute(simulatorEClass, SIMULATOR__NAME);
-		createEAttribute(simulatorEClass, SIMULATOR__ID);
 		createEReference(simulatorEClass, SIMULATOR__COMPONENTS);
 
 		simulatorComponentEClass = createEClass(SIMULATOR_COMPONENT);
-		createEAttribute(simulatorComponentEClass, SIMULATOR_COMPONENT__NAME);
-		createEAttribute(simulatorComponentEClass, SIMULATOR_COMPONENT__ID);
 		createEReference(simulatorComponentEClass, SIMULATOR_COMPONENT__REQUIRES);
 		createEReference(simulatorComponentEClass, SIMULATOR_COMPONENT__PROVIDES);
+		createEReference(simulatorComponentEClass, SIMULATOR_COMPONENT__SOURCEPROJECT);
+
+		sourceFileEClass = createEClass(SOURCE_FILE);
+		createEReference(sourceFileEClass, SOURCE_FILE__IMPORTS);
+
+		sourcePackageEClass = createEClass(SOURCE_PACKAGE);
+		createEReference(sourcePackageEClass, SOURCE_PACKAGE__SOURCEFILE);
+
+		namedElementEClass = createEClass(NAMED_ELEMENT);
+		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
+
+		identifiableElementEClass = createEClass(IDENTIFIABLE_ELEMENT);
+		createEAttribute(identifiableElementEClass, IDENTIFIABLE_ELEMENT__ID);
+
+		sourceProjectEClass = createEClass(SOURCE_PROJECT);
+		createEReference(sourceProjectEClass, SOURCE_PROJECT__SOURCEPACKAGE);
 	}
 
 	/**
@@ -245,18 +377,37 @@ public class SimulatorComponentMetamodelPackageImpl extends EPackageImpl impleme
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		simulatorEClass.getESuperTypes().add(this.getNamedElement());
+		simulatorEClass.getESuperTypes().add(this.getIdentifiableElement());
+		simulatorComponentEClass.getESuperTypes().add(this.getNamedElement());
+		simulatorComponentEClass.getESuperTypes().add(this.getIdentifiableElement());
+		sourceFileEClass.getESuperTypes().add(this.getNamedElement());
+		sourcePackageEClass.getESuperTypes().add(this.getNamedElement());
+		sourceProjectEClass.getESuperTypes().add(this.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(simulatorEClass, Simulator.class, "Simulator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSimulator_Name(), ecorePackage.getEString(), "name", null, 1, 1, Simulator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSimulator_Id(), ecorePackage.getEString(), "id", null, 1, 1, Simulator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSimulator_Components(), this.getSimulatorComponent(), null, "components", null, 1, -1, Simulator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(simulatorComponentEClass, SimulatorComponent.class, "SimulatorComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSimulatorComponent_Name(), ecorePackage.getEString(), "name", null, 1, 1, SimulatorComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSimulatorComponent_Id(), ecorePackage.getEString(), "id", null, 1, 1, SimulatorComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSimulatorComponent_Requires(), this.getSimulatorComponent(), null, "requires", null, 0, -1, SimulatorComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSimulatorComponent_Provides(), this.getSimulatorComponent(), null, "provides", null, 0, -1, SimulatorComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSimulatorComponent_Sourceproject(), this.getSourceProject(), null, "sourceproject", null, 0, -1, SimulatorComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(sourceFileEClass, SourceFile.class, "SourceFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSourceFile_Imports(), this.getSourceFile(), null, "imports", null, 0, -1, SourceFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(sourcePackageEClass, SourcePackage.class, "SourcePackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSourcePackage_Sourcefile(), this.getSourceFile(), null, "sourcefile", null, 0, -1, SourcePackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(identifiableElementEClass, IdentifiableElement.class, "IdentifiableElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getIdentifiableElement_Id(), ecorePackage.getEString(), "id", null, 1, 1, IdentifiableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(sourceProjectEClass, SourceProject.class, "SourceProject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSourceProject_Sourcepackage(), this.getSourcePackage(), null, "sourcepackage", null, 0, -1, SourceProject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

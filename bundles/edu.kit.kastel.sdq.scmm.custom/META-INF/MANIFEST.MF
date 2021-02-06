@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Custom
+Bundle-SymbolicName: edu.kit.kastel.sdq.scmm.custom;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: edu.kit.kastel.sdq.scmm.custom.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources;bundle-version="3.13.800",
+ org.eclipse.sirius;bundle-version="6.3.4",
+ edu.kit.kastel.sdq.scmm;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Automatic-Module-Name: edu.kit.kastel.sdq.scmm.custom
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: spoon-core-8.4.0-beta-12-jar-with-dependencies.jar,
+ .

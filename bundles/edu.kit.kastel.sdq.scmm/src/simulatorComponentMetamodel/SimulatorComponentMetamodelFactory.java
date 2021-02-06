@@ -40,6 +40,33 @@ public interface SimulatorComponentMetamodelFactory extends EFactory {
 	SimulatorComponent createSimulatorComponent();
 
 	/**
+	 * Returns a new object of class '<em>Source File</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Source File</em>'.
+	 * @generated
+	 */
+	SourceFile createSourceFile();
+
+	/**
+	 * Returns a new object of class '<em>Source Package</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Source Package</em>'.
+	 * @generated
+	 */
+	SourcePackage createSourcePackage();
+
+	/**
+	 * Returns a new object of class '<em>Source Project</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Source Project</em>'.
+	 * @generated
+	 */
+	SourceProject createSourceProject();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

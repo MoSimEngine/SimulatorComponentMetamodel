@@ -1,19 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="SCMM" nsURI="http://www.example.org/simulatorComponentMetamodel"
-    nsPrefix="edu.kit.kastel.sdq.scmm">
-  <eClassifiers xsi:type="ecore:EClass" name="Simulator">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="simulatorComponentMetamodel" nsURI="http://www.example.org/simulatorComponentMetamodel"
+    nsPrefix="simulatorComponentMetamodel">
+  <eClassifiers xsi:type="ecore:EClass" name="Simulator" eSuperTypes="#//NamedElement #//IdentifiableElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="components" lowerBound="1"
         upperBound="-1" eType="#//SimulatorComponent" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SimulatorComponent">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimulatorComponent" eSuperTypes="#//NamedElement #//IdentifiableElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="requires" upperBound="-1"
         eType="#//SimulatorComponent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="provides" upperBound="-1"
         eType="#//SimulatorComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceproject" upperBound="-1"
+        eType="#//SourceProject" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SourceFile" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="#//SourceFile"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SourcePackage" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourcefile" upperBound="-1"
+        eType="#//SourceFile" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IdentifiableElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SourceProject" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourcepackage" upperBound="-1"
+        eType="#//SourcePackage" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

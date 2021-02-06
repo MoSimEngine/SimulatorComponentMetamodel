@@ -1,22 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/edu.kit.kastel.sdq.scmm/src" modelPluginID="edu.kit.kastel.sdq.scmm"
-    modelName="SimulatorComponentMetamodel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
-    operationReflection="true" importOrganizing="true">
+    modelName="SimulatorComponentMetamodel" editPluginClass="simulatorComponentMetamodel.provider.SimulatorComponentMetamodelEditPlugin"
+    editorPluginClass="simulatorComponentMetamodel.presentation.SimulatorComponentMetamodelEditorPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testsDirectory=""
+    testSuiteClass="" importerID="org.eclipse.emf.importer.ecore" complianceLevel="11.0"
+    copyrightFields="false" testsPluginID="edu.kit.kastel.sdq.scmm.tests" operationReflection="true"
+    importOrganizing="true">
   <foreignModel>simulatorComponentMetamodel.ecore</foreignModel>
   <genPackages prefix="SimulatorComponentMetamodel" disposableProviderFactory="true"
       ecorePackage="simulatorComponentMetamodel.ecore#/">
     <genClasses ecoreClass="simulatorComponentMetamodel.ecore#//Simulator">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simulatorComponentMetamodel.ecore#//Simulator/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simulatorComponentMetamodel.ecore#//Simulator/id"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simulatorComponentMetamodel.ecore#//Simulator/components"/>
     </genClasses>
     <genClasses ecoreClass="simulatorComponentMetamodel.ecore#//SimulatorComponent">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simulatorComponentMetamodel.ecore#//SimulatorComponent/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simulatorComponentMetamodel.ecore#//SimulatorComponent/id"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simulatorComponentMetamodel.ecore#//SimulatorComponent/requires"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simulatorComponentMetamodel.ecore#//SimulatorComponent/provides"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simulatorComponentMetamodel.ecore#//SimulatorComponent/sourceproject"/>
+    </genClasses>
+    <genClasses ecoreClass="simulatorComponentMetamodel.ecore#//SourceFile">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simulatorComponentMetamodel.ecore#//SourceFile/imports"/>
+    </genClasses>
+    <genClasses ecoreClass="simulatorComponentMetamodel.ecore#//SourcePackage">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simulatorComponentMetamodel.ecore#//SourcePackage/sourcefile"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="simulatorComponentMetamodel.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simulatorComponentMetamodel.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="simulatorComponentMetamodel.ecore#//IdentifiableElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simulatorComponentMetamodel.ecore#//IdentifiableElement/id"/>
+    </genClasses>
+    <genClasses ecoreClass="simulatorComponentMetamodel.ecore#//SourceProject">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simulatorComponentMetamodel.ecore#//SourceProject/sourcepackage"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

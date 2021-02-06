@@ -58,6 +58,9 @@ public class SimulatorComponentMetamodelFactoryImpl extends EFactoryImpl impleme
 		switch (eClass.getClassifierID()) {
 			case SimulatorComponentMetamodelPackage.SIMULATOR: return createSimulator();
 			case SimulatorComponentMetamodelPackage.SIMULATOR_COMPONENT: return createSimulatorComponent();
+			case SimulatorComponentMetamodelPackage.SOURCE_FILE: return createSourceFile();
+			case SimulatorComponentMetamodelPackage.SOURCE_PACKAGE: return createSourcePackage();
+			case SimulatorComponentMetamodelPackage.SOURCE_PROJECT: return createSourceProject();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -68,6 +71,7 @@ public class SimulatorComponentMetamodelFactoryImpl extends EFactoryImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Simulator createSimulator() {
 		SimulatorImpl simulator = new SimulatorImpl();
 		return simulator;
@@ -78,6 +82,7 @@ public class SimulatorComponentMetamodelFactoryImpl extends EFactoryImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SimulatorComponent createSimulatorComponent() {
 		SimulatorComponentImpl simulatorComponent = new SimulatorComponentImpl();
 		return simulatorComponent;
@@ -88,6 +93,40 @@ public class SimulatorComponentMetamodelFactoryImpl extends EFactoryImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public SourceFile createSourceFile() {
+		SourceFileImpl sourceFile = new SourceFileImpl();
+		return sourceFile;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public SourcePackage createSourcePackage() {
+		SourcePackageImpl sourcePackage = new SourcePackageImpl();
+		return sourcePackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public SourceProject createSourceProject() {
+		SourceProjectImpl sourceProject = new SourceProjectImpl();
+		return sourceProject;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public SimulatorComponentMetamodelPackage getSimulatorComponentMetamodelPackage() {
 		return (SimulatorComponentMetamodelPackage)getEPackage();
 	}
