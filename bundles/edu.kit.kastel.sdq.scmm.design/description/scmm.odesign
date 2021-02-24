@@ -4,7 +4,7 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Simulator Component Diagramm" domainClass="simulatorComponentMetamodel::Simulator" enablePopupBars="true">
       <metamodel href="http://www.example.org/simulatorComponentMetamodel#/"/>
       <defaultLayer name="Default">
-        <edgeMappings name="requiredEdge" sourceMapping="//@ownedViewpoints[name='simulators']/@ownedRepresentations[name='Simulator%20Component%20Diagramm']/@defaultLayer/@containerMappings[name='SimulatorComponentContainer']" targetMapping="//@ownedViewpoints[name='simulators']/@ownedRepresentations[name='Simulator%20Component%20Diagramm']/@defaultLayer/@containerMappings[name='SimulatorComponentContainer']" targetFinderExpression="aql:self.requires">
+        <edgeMappings name="requiredEdge" sourceMapping="//@ownedViewpoints[name='simulators']/@ownedRepresentations[name='Simulator%20Component%20Diagramm']/@defaultLayer/@containerMappings[name='SimulatorComponent']" targetMapping="//@ownedViewpoints[name='simulators']/@ownedRepresentations[name='Simulator%20Component%20Diagramm']/@defaultLayer/@containerMappings[name='SimulatorComponent']" targetFinderExpression="aql:self.requires">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -12,7 +12,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="importEdge" sourceMapping="//@ownedViewpoints[name='simulators']/@ownedRepresentations[name='Simulator%20Component%20Diagramm']/@defaultLayer/@containerMappings[name='SimulatorComponentContainer']/@subContainerMappings[name='SourceProject']/@subContainerMappings[name='SourcePackage']/@subContainerMappings[name='SourceFile']" targetMapping="//@ownedViewpoints[name='simulators']/@ownedRepresentations[name='Simulator%20Component%20Diagramm']/@defaultLayer/@containerMappings[name='SimulatorComponentContainer']/@subContainerMappings[name='SourceProject']/@subContainerMappings[name='SourcePackage']/@subContainerMappings[name='SourceFile']" targetFinderExpression="aql:self.imports">
+        <edgeMappings name="importEdge" sourceMapping="//@ownedViewpoints[name='simulators']/@ownedRepresentations[name='Simulator%20Component%20Diagramm']/@defaultLayer/@containerMappings[name='SimulatorComponent']/@subContainerMappings[name='SourceProject']/@subContainerMappings[name='SourcePackage']/@subContainerMappings[name='SourceFile']" targetMapping="//@ownedViewpoints[name='simulators']/@ownedRepresentations[name='Simulator%20Component%20Diagramm']/@defaultLayer/@containerMappings[name='SimulatorComponent']/@subContainerMappings[name='SourceProject']/@subContainerMappings[name='SourcePackage']/@subContainerMappings[name='SourceFile']" targetFinderExpression="aql:self.imports">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -20,7 +20,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="SimulatorComponentContainer" domainClass="simulatorComponentMetamodel::SimulatorComponent">
+        <containerMappings name="SimulatorComponent" domainClass="simulatorComponentMetamodel::SimulatorComponent">
           <subContainerMappings name="SourceProject" semanticCandidatesExpression="feature:sourceproject" domainClass="simulatorComponentMetamodel::SourceProject">
             <subContainerMappings name="SourcePackage" semanticCandidatesExpression="feature:sourcepackage" domainClass="simulatorComponentMetamodel::SourcePackage">
               <subContainerMappings name="SourceFile" semanticCandidatesExpression="feature:sourcefile" domainClass="simulatorComponentMetamodel::SourceFile">
@@ -53,7 +53,7 @@
           </style>
         </containerMappings>
         <toolSections name="Tools">
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Load Source Project" containerMappings="//@ownedViewpoints[name='simulators']/@ownedRepresentations[name='Simulator%20Component%20Diagramm']/@defaultLayer/@containerMappings[name='SimulatorComponentContainer']/@subContainerMappings[name='SourceProject']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Load Source Project" containerMappings="//@ownedViewpoints[name='simulators']/@ownedRepresentations[name='Simulator%20Component%20Diagramm']/@defaultLayer/@containerMappings[name='SimulatorComponent']/@subContainerMappings[name='SourceProject']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -62,14 +62,14 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Simulator Component" precondition="aql:container.oclIsTypeOf(simulatorComponentMetamodel::Simulator)" containerMappings="//@ownedViewpoints[name='simulators']/@ownedRepresentations[name='Simulator%20Component%20Diagramm']/@defaultLayer/@containerMappings[name='SimulatorComponentContainer']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Simulator Component" precondition="aql:container.oclIsTypeOf(simulatorComponentMetamodel::Simulator)" containerMappings="//@ownedViewpoints[name='simulators']/@ownedRepresentations[name='Simulator%20Component%20Diagramm']/@defaultLayer/@containerMappings[name='SimulatorComponent']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="simulatorComponentMetamodel::SimulatorComponent" referenceName="components"/>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Source Project" containerMappings="//@ownedViewpoints[name='simulators']/@ownedRepresentations[name='Simulator%20Component%20Diagramm']/@defaultLayer/@containerMappings[name='SimulatorComponentContainer']/@subContainerMappings[name='SourceProject']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Source Project" containerMappings="//@ownedViewpoints[name='simulators']/@ownedRepresentations[name='Simulator%20Component%20Diagramm']/@defaultLayer/@containerMappings[name='SimulatorComponent']/@subContainerMappings[name='SourceProject']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
